@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,
+body {
+  background: linear-gradient(to top, #29584F, #74C23D) cover;
+  height: 100vh;
+  color: rgb(214, 46, 46);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.banner {
+	background: linear-gradient(-45deg, #858181, #070707, #6C7275, #93A7A2);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.foter {
+  background: linear-gradient(-45deg, #858181, #070707, #6C7275, #93A7A2);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+  height: 10vh;
+  color: aliceblue;
+  font-size: 3vh;
+}
+a {
+  text-decoration: none;
+}
+/*
+header {
+  height: 250px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header img {
+  height: 260px;
+    margin-bottom: 3rem;
+}*/
+
+.card {
+  cursor: pointer;
+  background-color: transparent;
+  height: 300px;
+  perspective: 1000px;  
+  margin: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.card h1 {
+  font-size: 25px;
+  margin-top: 2rem;
+  border-bottom: 1px #fff solid;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 8px;
+}
+
+.card-back {
+  background: url(../src/img/card.jpg);
+  color: rgb(2, 1, 1);
+  height: 300px;
+  background-position: center;
+  padding: 20px;
+  transform: rotateY(180deg);
+}
+
+.card li {
+  list-style: none;
+  padding-bottom: 10px;
+  margin-top: 20px;
 }
